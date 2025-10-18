@@ -1,4 +1,4 @@
-wrapper
+.wrapper
 {
   margin: 0;
   padding: 0;
@@ -202,4 +202,5 @@ a:hover {
             font-family: 'Roboto', sans-serif;
             color: chocolate;
            
+
         }
