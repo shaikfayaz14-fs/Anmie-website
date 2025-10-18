@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeHub - Your Gateway to the World of Anime</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-black bg-opacity-80 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold flex items-center">
+                <i class="fas fa-film text-blue-400 mr-2"></i>AnimeHub
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-blue-400 transition">Home</a>
+                <a href="#library" class="hover:text-blue-400 transition">Anime Library</a>
+                <a href="#characters" class="hover:text-blue-400 transition">Characters</a>
+                <a href="./login.html" class="hover:text-blue-400 transition">Login</a>
+                <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"  data-bs-toggle="dropdown" aria-expanded="false" id="dev" >
+            More Info
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Contact us</a></li>
+            <li><a class="dropdown-item" href="#news">News</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#about">about</a></li>
+          </ul>
+        </li>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 p-4">
+            <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
+            <a href="#library" class="block py-2 hover:text-blue-400">Anime Library</a>
+            <a href="#characters" class="block py-2 hover:text-blue-400">Characters</a>
+            <a href="#news" class="block py-2 hover:text-blue-400">News</a>
+            <a href="#about" class="block py-2 hover:text-blue-400">About</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0a464111-1e79-464b-b9e4-93b862797ea9.png');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="text-center z-10 fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Dive into the World of Anime</h1>
+            <p class="text-xl mb-6">Discover your next favorite series, explore epic characters, and stay updated with the latest news.</p>
+            <a href="#library" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full text-lg font-semibold transition">Explore Anime</a>
+        </div>
+    </section>
+
+    <!-- Anime Library Section -->
+    <section id="library" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 fade-in">Anime Library</h2>
+            <input type="text" id="search" placeholder="Search anime..." class="w-full p-3 rounded-lg mb-8 bg-gray-800 text-white focus:outline-none">
+            <div id="anime-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
+                <!-- Anime Cards will be populated by JS -->
+                <div class="card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/be3fcf6a-8b49-40f4-b86a-0c616c945bde.png" alt="Vibrant anime poster for Attack on Titan featuring armored soldiers fighting giant titans in a dystopian world with dramatic lighting and high energy" class="w-full h-60 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Attack on Titan</h3>
+                        <p class="text-sm">Epic story of humanity battling titans.</p>
+                        <button class="mt-2 bg-blue-600 px-4 py-2 rounded">Watch Now</button>
+                    </div>
+                </div>
+                <div class="card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/67c9081f-53d4-4676-8d3b-bb89c64cd45c.png" alt="Detailed anime poster for One Piece showing pirate crew members with straw hats and treasures on a sunny ocean adventure with dynamic poses and colorful backgrounds" class="w-full h-60 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">One Piece</h3>
+                        <p class="text-sm">Adventure of pirates in search of ultimate treasure.</p>
+                        <button class="mt-2 bg-blue-600 px-4 py-2 rounded">Watch Now</button>
+                    </div>
+                </div>
+                <div class="card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/47cde413-9f09-423d-ab4e-01c840888121.png" alt="Stunning anime poster for Naruto featuring young ninja with spiky hair in intense battle poses surrounded by swirling chakra and village landscapes" class="w-full h-60 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Naruto</h3>
+                        <p class="text-sm">Journey of a ninja to become the strongest.</p>
+                        <button class="mt-2 bg-blue-600 px-4 py-2 rounded">Watch Now</button>
+                    </div>
+                </div>
+                <div class="card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4d1e7671-23ef-4f0f-9c76-7122572c7981.png" alt="Fascinating anime poster for Death Note showing protagonist with a notebook in a dramatic shadow-filled room with suspenseful atmosphere and psychological elements" class="w-full h-60 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Death Note</h3>
+                        <p class="text-sm">Psychological thriller about a deadly notebook.</p>
+                        <button class="mt-2 bg-blue-600 px-4 py-2 rounded">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="py-16 px-4 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 fade-in">Epic Characters</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+                <div class="card text-center bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a0e925ba-6c41-4b74-9018-f7111c7783e2.png" alt="Detailed character portrait of Goku from Dragon Ball showing muscular warrior with spiky hair in fighting stance with energy aura and confident expression" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-xl mb-2">Goku</h3>
+                    <p>Powerhouse fighter from Dragon Ball.</p>
+                </div>
+                <div class="card text-center bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cbba8272-ad12-4b68-a6b9-4ea6aea98454.png" alt="Elegant character portrait of Asuka Langley from Neon Genesis Evangelion showing redhead pilot in mecha suit with determined eyes and futuristic background" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-xl mb-2">Asuka Langley</h3>
+                    <p>Fierce pilot from Evangelion.</p>
+                </div>
+                <div class="card text-center bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24041e52-f2de-4191-a09f-7c6c7c06ada2.png" alt="Mysterious character portrait of Light Yagami from Death Note showing intelligent young man holding notebook with intense gaze and shadowy lighting" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-xl mb-2">Light Yagami</h3>
+                    <p>Mastermind from Death Note.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 fade-in">Latest News & Updates</h2>
+            <div class=" space-y-6 fade-in">
+                <article class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/beb767c4-accf-4c64-aa1d-19a8e797febb.png" alt="Breaking news banner for upcoming anime season with colorful posters displaying new releases in a vibrant festival-like layout" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-xl mb-2">Upcoming Anime Season</h3>
+                    <p>Discover the hottest new series hitting the scene this fall.</p>
+                </article>
+                <article class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f508879a-ae39-48c0-90a5-4cebbd203475.png" alt="Event announcement banner for anime convention with cosplayers and booths showcasing manga, games, and fan art in a lively setting" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-xl mb-2">Anime Convention Highlights</h3>
+                    <p>Relive the magic from the latest anime extravaganza.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 bg-gray-800">
+        <div class="container mx-auto text-center fade-in">
+            <h2 class="text-3xl font-bold mb-4">About AnimeHub</h2>
+            <p class="text-lg max-w-3xl mx-auto">AnimeHub is your ultimate destination for all things anime. From classics to the latest trends, we provide reviews, recommendations, and a community for fans worldwide. Join us to explore endless adventures.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black p-8 text-center">
+        <div class="container mx-auto">
+    <content> 
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Simple search functionality
+        const searchInput = document.getElementById('search');
+        const animeGrid = document.getElementById('anime-grid');
+        const cards = animeGrid.querySelectorAll('.card');
+
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+</content>
+</create_file
